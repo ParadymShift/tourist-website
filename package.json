@@ -1,0 +1,30 @@
+{
+  "name": "tourist-website",
+  "version": "0.0.1",
+  "description": "Shifting your views on traverse city",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ParadymShift/tourist-website.git"
+  },
+  "keywords": [
+    "website",
+    "traverse",
+    "city"
+  ],
+  "author": "Cameron VanHouzen, Blaine Simcox",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ParadymShift/tourist-website/issues"
+  },
+  "homepage": "https://github.com/ParadymShift/tourist-website",
+  "devDependencies": {
+    "express": "^4.9.5"
+  },
+  "dependencies": {
+    "jade": "^1.7.0"
+  }
+}
