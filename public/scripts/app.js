@@ -13,7 +13,7 @@ $(document).ready(function() {
                $("#articleRow").append("<div class=\"clearfix visible-md-block\"></div>");
                columnCount = 0;
            }
-       })
+       });
     });
 });
 
