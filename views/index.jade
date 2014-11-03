@@ -1,17 +1,7 @@
 extends _layout.jade
 block title
-    title Index Page
+    title Index
+block header
+    h1.page-header TC Outsiders
 block content
-    .container
-        h1.page-header TC Outsiders
-        .row
-            .col-md-8: .row#articleRow
-            .col-md-4: .row
-                .col-md-12: h3 Navigation
-                .col-md-12
-                    nav.panel.panel-default(role="navigation"): .panel-body
-                        ul.nav.nav-pills.nav-stacked
-                            li.active: a(href='/index') Home
-                            li: a(href='/restaurants') Restaurants
-                            li: a(href='/bars') Bars
-                            li: a(href='/landmarks') Landmarks
+    #articleRow

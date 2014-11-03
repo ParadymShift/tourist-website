@@ -6,8 +6,8 @@ app.set('view engine', 'jade');
 app.use("/public", express.static(__dirname + "/public"));
 
 
-app.get("/restaurant", function (req, res) {
-    res.render("restaurant");
+app.get("/restaurants", function (req, res) {
+    res.render("restaurants");
 });
 app.get("/bars", function (req, res) {
     res.render("bars");
@@ -17,6 +17,9 @@ app.get("/landmarks", function (req, res) {
 });
 app.get("/block", function (req, res) {
     res.render("contentBlock", {articleNumber: req.query.articleNumber});
+});
+app.get("/index", function (req, res) {
+    res.render("index");
 });
 app.get("/", function (req, res) {
     res.render("index");
