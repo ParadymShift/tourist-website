@@ -3,7 +3,7 @@ $(document).ready(function() {
     var matchString = "a[href*=\"" + document.title.toLowerCase() + "\"]";
     var currentLink = $(matchString);
     currentLink.parent().addClass("active");
-    
+
     //Fill an array of ajax operation promises to load blocks
     var articlePromises = [];
     for (var i = 0; i < 4; i++) {
@@ -12,24 +12,26 @@ $(document).ready(function() {
     //When finished loading create rows, inserting a clearfix every second item
     Q.all(articlePromises).then(function(blockArray) {
         var columnCount = 0;
-       _.each(blockArray, function(block){
-           var appendedBlock = loadBlock(block);
-           loadLorum(appendedBlock);
-           columnCount++;
-           if(columnCount > 1) {
-               $("#articleRow").append("<div class=\"clearfix\"></div>");
-               columnCount = 0;
-           }
-       });
+        _.each(blockArray, function(block) {
+            var appendedBlock = loadBlock(block);
+            loadLorum(appendedBlock);
+            columnCount++;
+            if (columnCount > 1) {
+                $("#articleRow").append("<div class=\"clearfix\"></div>");
+                columnCount = 0;
+            }
+        });
     });
+    //PRINT TOKEN TO LOG FOR TESTING
+    loadCategories();
 });
 //Appends the block to the #articleRow element
 function loadBlock(block) {
-    var jBlock = $(block);
-    $("#articleRow").append(jBlock);
-    return jBlock;
-}
-//Loads some random lorum text to be appended to each article
+        var jBlock = $(block);
+        $("#articleRow").append(jBlock);
+        return jBlock;
+    }
+    //Loads some random lorum text to be appended to each article
 function loadLorum(jObj) {
     $.ajax({
         url: "https://baconipsum.com/api/?type=meat-and-filler",
@@ -37,4 +39,15 @@ function loadLorum(jObj) {
     }).done(function(lorumArray) {
         $(".lorum-block", jObj).text(lorumArray[0]);
     });
+}
+
+function loadCategories() {
+    $.get("/api/v1/category/walrus");
+    WL.init({
+        client_id: "000000004C12D86A",
+        redirect_url: "tourist-website-c9-vanhouc.c9.io/index"
+    }).then(function(token) {
+        console.log(token);
+    });
+    
 }

@@ -5,7 +5,6 @@ app.set('view engine', 'jade');
 
 app.use("/public", express.static(__dirname + "/public"));
 
-
 app.get("/restaurants", function (req, res) {
     res.render("restaurants");
 });
@@ -22,9 +21,8 @@ app.get("/index", function (req, res) {
     res.render("index");
 });
 app.get("/", function (req, res) {
-    res.render("index");
+    res.redirect("/public/frankfort/index_frankfort.html");
 });
-
 app.listen(process.env.PORT, function(){
     console.log('Listening on port %d', process.env.PORT);
 });
