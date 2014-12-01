@@ -18,10 +18,10 @@ app.get("/block", function (req, res) {
     res.render("contentBlock", {articleNumber: req.query.articleNumber});
 });
 app.get("/index", function (req, res) {
-    res.render("index");
+    res.redirect("/public/index.html");
 });
 app.get("/", function (req, res) {
-    res.redirect("/public/frankfort/index_frankfort.html");
+    res.redirect("/public/index.html");
 });
 app.listen(process.env.PORT, function(){
     console.log('Listening on port %d', process.env.PORT);

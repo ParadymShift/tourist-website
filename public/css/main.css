@@ -124,6 +124,8 @@ header img
     overflow:auto;
     padding: 1% 2% 1% 2%;
     text-align:center;
+    margin-left:auto;
+    margin-right:auto;
 }
 #scroolbox h1
 {
@@ -138,6 +140,7 @@ header img
 {
     float:right;
     margin-left:.5em;
+    width:25%;
 }
 #docks
 {
