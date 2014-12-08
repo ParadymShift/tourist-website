@@ -24,6 +24,7 @@ app.post("/feedback", function(req, res) {
         }
         console.log(json);
     });
+    res.send('OK');
 });
 app.get("/feedback", function(req, res) {
     res.redirect("/public/index.html");
