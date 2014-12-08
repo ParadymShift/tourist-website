@@ -35,10 +35,10 @@
             </nav>
         </header>
         <div class="container">
-            <form role="form">
+            <form role="form" id="feedbackForm">
                 <div class="form-group">
                     <label for="selectType">Please Choose the Type of Feedback</label>
-                    <select class="form-control" id="selectType">
+                    <select class="form-control" id="selectType" name="type">
                         <option>Suggestion</option>
                         <option>Feature Request</option>
                         <option>Bug</option>
@@ -47,11 +47,11 @@
                 </div>
                 <div class="form-group">
                     <label for="textareaFeedback">Enter Feedback</label>
-                    <textarea class="form-control" rows="5" id="textareaFeedback" placeholder="Here is some example text..."></textarea>
+                    <textarea class="form-control" rows="5" id="textareaFeedback" placeholder="Here is some example text..." name="text"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="inputContactEmail">(Optional)Provide an email we can respond to</label>
-                    <input type="email" class="form-control" id="inputContactEmail" placeholder="example@default.com"/>
+                    <input type="email" class="form-control" id="inputContactEmail" placeholder="example@default.com" name="email"/>
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Submit</button>

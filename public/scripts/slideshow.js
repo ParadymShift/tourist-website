@@ -1,5 +1,10 @@
 var fadeFunc;
 $(document).ready(function() {
+    $("form").submit(function (event) {
+        event.preventDefault();
+        var formData = new FormData(document.getElementById(feedbackForm));
+       $.post("/feedback", $("form").serialize());
+    });
     $('#fadein img:gt(0), #fadein2 img:gt(0), #fadein3 img:gt(0), #fadein4 img:gt(0), #mainWindow img:gt(0)').hide();
     fadeFunc = setInterval(fadePictures, 2000);
 });
